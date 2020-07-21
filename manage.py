@@ -11,6 +11,7 @@ migrate = Migrate(app, db)
 
 manager.add_command('server',Server)
 manager.add_command('db', MigrateCommand)
+manager.add_command('run',Server(use_debugger=True))
 
 manager.add_command('server',Server)
 @manager.command
@@ -26,4 +27,4 @@ def make_shell_context():
 
 if __name__ == '__main__':
     manager.run()
-    manager.run(debug=True)
+    
